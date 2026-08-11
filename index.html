@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tareas</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Cambiar contraste">
+  <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+  <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+
+<div class="app-shell">
+
+  <header class="hero">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-dot"></span>
+      <span id="todayDate">Hoy</span>
+    </div>
+    <h1 class="hero-title">Tus tareas<span class="hero-title-dot">.</span></h1>
+    <div class="hero-meter">
+      <div class="hero-meter-track">
+        <div class="hero-meter-fill" id="meterFill"></div>
+      </div>
+      <span class="hero-meter-label" id="taskCount">Sin tareas pendientes</span>
+    </div>
+  </header>
+
+  <div class="add-row">
+    <input type="text" id="taskInput" placeholder="Escribe una nueva tarea..." maxlength="200">
+    <button class="btn-add" id="addBtn">Agregar</button>
+  </div>
+
+  <div class="task-list" id="taskList"></div>
+  <div class="empty-state" id="emptyState">No tienes tareas todavía. Agrega la primera arriba.</div>
+
+  <div class="footer-info">Doble clic sobre una tarea para editarla</div>
+</div>
+
+<div class="confirm-overlay" id="confirmOverlay">
+  <div class="confirm-box">
+    <div class="confirm-title">Eliminar tarea</div>
+    <div class="confirm-text">¿Estás seguro de que deseas eliminar esta tarea? Esta acción no se puede deshacer.</div>
+    <div class="confirm-actions">
+      <button class="btn-cancel" id="cancelDelete">Cancelar</button>
+      <button class="btn-confirm-delete" id="confirmDelete">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
